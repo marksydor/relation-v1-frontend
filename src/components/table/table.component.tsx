@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Faxtion } from "../../classes/faction.class";
 import s from "./TableComponent.module.scss";
-import { CardInfo } from "../modals/card-info/CardInfo.modal";
+import { CardInfo } from "../modals/card-info/card-info.modal";
 import Draggable from "react-draggable";
 
 export interface TableComponentProps {
