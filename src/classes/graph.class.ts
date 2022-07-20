@@ -24,15 +24,15 @@ export class Graph {
     this.relations = [];
   }
 
-  insert(сreateGraph: CreateGraph) {
+  insert(value: any) {
     this._maxId.value++;
-    this.relations.push(new Graph(сreateGraph));
+    this.relations.push(new Graph({ value, id: this.maxId }));
     return this;
   }
 
-  insertAndReturn(сreateGraph: CreateGraph) {
+  insertAndReturn(value: any) {
     this._maxId.value++;
-    this.relations.push(new Graph(сreateGraph));
+    this.relations.push(new Graph({ value, id: this.maxId }));
     return this.relations.at(-1);
   }
 

@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import { TableContainer } from "./components/table/TableContainer";
-import { HeaderComponent } from "./components/header/HeaderComponent";
+import { TableContainer } from "./components/table/table.container";
+import { HeaderComponent } from "./components/header/header.component";
 import {
   DragElement,
   Position,
 } from "./components/drag-element/drag-elemet.container";
-import { Line } from "./components/line/line.container";
+import { Line } from "./components/line/line.component";
+import { GraphTree } from "./components/graph-tree/graph-tree.component";
+import { head } from "./mock-data/graph.mock";
 
 function App() {
+  const [test, setTest] = useState({ text: "test text" });
   const [position1, setPosition1] = useState({ x: 0, y: 0 });
   const [position2, setPosition2] = useState({ x: 0, y: 0 });
 
@@ -26,17 +29,7 @@ function App() {
       <HeaderComponent />
       {/* <TableContainer /> */}
       <div className="table-wrapper">
-        <DragElement getPosition={getPosition1} className="table-element">
-          <div>
-            <h1>Text</h1>
-          </div>
-        </DragElement>
-        <DragElement getPosition={getPosition2} className="table-element">
-          <div>
-            <h1>Text</h1>
-          </div>
-        </DragElement>
-        <Line start={position1} end={position2} />
+        <GraphTree graph={head} height={80} width={240} />
       </div>
     </div>
   );

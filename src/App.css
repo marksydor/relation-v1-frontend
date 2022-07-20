@@ -3,10 +3,6 @@
   padding: 0;
 }
 
-.App {
-  text-align: center;
-}
-
 /* width */
 ::-webkit-scrollbar {
   width: 5px;
@@ -28,12 +24,14 @@
 }
 
 .table-wrapper {
-  display: flex;
-  justify-content: center;
+  position: relative;
 }
 
-.teble-element {
+.table-element {
+  top: 0;
+  left: 0;
   width: 240px;
+  display: inline-block;
   height: 50px;
-  position: relative;
+  position: absolute;
 }

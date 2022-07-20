@@ -10,6 +10,7 @@ export interface DragElementProps {
   getPosition: (position: Position) => void;
   children?: React.ReactNode;
   className?: string;
+  style?: any;
 }
 
 export const DragElement = (props: DragElementProps) => {
@@ -48,7 +49,7 @@ export const DragElement = (props: DragElementProps) => {
 
   return (
     <Draggable nodeRef={ref} onDrag={HandleDrag}>
-      <div ref={ref} className={props.className}>
+      <div ref={ref} className={props.className} style={props.style}>
         {position.x} {position.y}
         {props.children}
       </div>
